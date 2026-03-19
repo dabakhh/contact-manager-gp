@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de Contacts</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers votre fichier CSS -->
+</head>
+<body>
+     <div class="container">
+          <h1>Gestionnaire de Contacts</h1>
+          
+          <form id="contactForm">
+               <input type="text" id="firstName" placeholder="Prénom" required>
+               <input type="text" id="lastName" placeholder="Nom" required>
+               <input type="number" id="age" placeholder="Âge" required>
+               <input type="email" id="email" placeholder="Email" required>
+               <input type="tel" id="phone" placeholder="Téléphone" required>
+               <button type="submit">Ajouter Contact</button>
+          </form>
+     
+          <div id="contactsList">
+               <!-- Les contacts seront affichés ici -->
+          </div>
+     </div>
+     
+     <script src="contact.js"></script> <!-- Lien vers votre fichier JavaScript -->
+</body>
+</html>
