@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: rgb(201, 234, 247);
+    color: rgba(63, 59, 59, 0.74);
+    margin: 30px;
+    border-radius: 12px;
+}
+
+.container h1{
+    background-color:rgb(151, 207, 229);
+    margin: 0;
+    padding: 10px 20px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.container article ul li{
+    list-style: none;
+}
+
+#contactForm{    
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+#champs{
+    display:grid;
+    grid-template-columns: 10% 90%;
+    align-items: center;
+}
+
+
+#save{
+    width: 10%;
+    height: 40px;
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+    font-size: large;
+    align-self: end;
+    
+}
+
+.container article{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#phone, #firstName, #lastName, #email{
+    height: 30px;
+}
+#selectCategory{
+    height: 37px;
+    padding-left: 30px;
+    font-weight: 500;
+}

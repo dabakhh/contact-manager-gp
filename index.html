@@ -3,20 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestionnaire de Contacts</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Lien vers votre fichier CSS -->
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Contacts</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> <!-- Lien vers votre fichier CSS -->
 </head>
 <body>
      <div class="container">
           <h1>Gestionnaire de Contacts</h1>
-          
+          <article>
+            <div class="settings">
+                <button><i class="fa-solid fa-circle-plus"></i>Ajouter</button>
+                <button><i class="fa-solid fa-file-pen"></i>Modifier</button>
+                <button><i class="fa-solid fa-download"></i>Télécharger</button>
+            </div>
+            <div class="langages">
+                <label for="lang-select"></label>
+                <select name="" id="">
+                    <option value="Français" selected>Français</option>
+                    <option value="English">English</option>
+                </select>
+                
+            </div>
+          </article>
           <form id="contactForm">
-               <input type="text" id="firstName" placeholder="Prénom" required>
-               <input type="text" id="lastName" placeholder="Nom" required>
-               <input type="number" id="age" placeholder="Âge" required>
-               <input type="email" id="email" placeholder="Email" required>
-               <input type="tel" id="phone" placeholder="Téléphone" required>
-               <button type="submit">Ajouter Contact</button>
+               <div id="champs">
+                <label for="firstName">Prénom</label>
+                <input type="text" id="firstName" required>
+               </div>
+               <div id="champs">
+                <label for="lastName">Nom</label>
+                <input type="text" id="lastName" required>
+               </div>
+               <div id="champs">
+                <label for="phone">Téléphone</label>
+                <input type="" id="phone" required>
+               </div>
+               <div id="champs">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+               </div>
+
+               <div class="category" id="champs">
+                <label for="selectCategory">Catégorie</label>
+                <select name="" id="selectCategory">
+                    <option value="Famille" selected>Famille</option>
+                    <option value="Ami">Ami(e)</option>
+                    <option value="Collègue">Collègue</option>
+                </select>
+               </div>
+
+               <div id="champs">
+                <label for="favorite">Statut</label>
+                <div><input type="checkbox" name="favorite" id="favorite">
+                <label for="">Favoris</label></div>
+               </div>
+               
+               <button type="submit" id="save">Enregistrer</button>
           </form>
      
           <div id="contactsList">
@@ -24,6 +73,6 @@
           </div>
      </div>
      
-     <script src="contact.js"></script> <!-- Lien vers votre fichier JavaScript -->
+     <script src="assets/js/contact.js"></script> <!-- Lien vers votre fichier JavaScript -->
 </body>
 </html>
