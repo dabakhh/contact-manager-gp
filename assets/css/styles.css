@@ -9,6 +9,7 @@ body{
     color: rgba(63, 59, 59, 0.74);
     margin: 30px;
     border-radius: 12px;
+    padding-bottom: 20px;
 }
 
 .container h1{
@@ -62,4 +63,13 @@ body{
     height: 37px;
     padding-left: 30px;
     font-weight: 500;
+}
+
+#contactsList{
+   background-color: #fff;
+   margin: 20px;
+   border-radius: 24px;
+}
+li{
+    list-style: none;
 }
