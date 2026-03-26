@@ -1,15 +1,14 @@
-let contacts = []; // Tableau pour stocker les contacts
-const contactForm = document.getElementById('contactForm');
-const contactsList = document.getElementById('contactsList')
-const monUL = document.createElement('ul')
+const contactForm = document.getElementById('contactForm'); // Récupére le formulaire
+const contactsList = document.getElementById('contactsList') // Récupére le div où doivent s'afficher les contacts
+const monUL = document.createElement('ul') // Créer un ul pour contenir la liste des contacts
 
 
 
 function displayContacts(contactArray) {
     contactsList.appendChild(monUL)
-    contactArray.forEach(element => { // Display contacts one by one
-    
 
+    contactArray.forEach(element => { // Afficher les contacts un par un
+    
     // Prénom
     let li = document.createElement('li')
     monUL.appendChild(li);
@@ -24,35 +23,32 @@ function displayContacts(contactArray) {
     let li2 = document.createElement('li')
     monUL.appendChild(li2);
     li2.innerHTML= "Téléphone: " + element.phone;
-
+    
     // Email
     let li3 = document.createElement('li')
     monUL.appendChild(li3);
     li3.innerHTML= "Email: " + element.email;
-
+    
     // Catégorie
     let li4 = document.createElement('li')
     monUL.appendChild(li4);
     li4.innerHTML= "Catégorie: " + element.category;
-
+    
     // Statut
     let li5 = document.createElement('li')
     monUL.appendChild(li5);
     li5.innerHTML= "Statut: " + element.status
     li5.style.borderBottom="2px solid black"
-
+    
     monUL.style.color="blue"
 
-
-    });
+});
 }
 
 contactForm.addEventListener('submit', function(event) {
     event.preventDefault(); // Empêche le rechargement de la page lors de la soumission du formulaire
     
-    contactsList.style.border="1px solid"
-
-
+    
     // Récupérer les valeurs des champs du formulaire
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
@@ -79,23 +75,34 @@ contactForm.addEventListener('submit', function(event) {
     };
     
     
+
+    let contacts = JSON.parse(localStorage.getItem('mesContacts')) || []; // Tableau pour stocker les contacts
+
     // // Ajouter le contact au tableau
     contacts.push(contact);
-
+   
 
     // Ajouter les contacts dans le localStorage
     localStorage.setItem("mesContacts", JSON.stringify(contacts));
     
-    
 
+    // Alerte à l'utilisateur
+    alert("Veuillez actualiser la page")
     
-    // contactsList.appendChild(ul);
-    
-    // // Réinitialiser le formulaire
-    // contactForm.reset();
 });
 
-const localdata = JSON.parse(localStorage.getItem('mesContacts'))|| ["pas trouvé"];
-    
-// Afficher les contacts (tu devras créer cette fonction)
-displayContacts(localdata);
+
+// Récupérer les données existantes dans le localStorage
+const localdata = JSON.parse(localStorage.getItem('mesContacts'));
+
+
+// Afficher les contacts (Utilisation d'une fonction)
+if (localdata != undefined) { // Afficher si et seulement s'il y'a des éléments dans le localStorage
+    displayContacts(localdata)
+    contactsList.classList.add('contactStyle')
+    }
+
+
+
+
+
