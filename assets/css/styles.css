@@ -34,13 +34,11 @@ body{
 
 #champs{
     display:grid;
-    grid-template-columns: 10% 90%;
     align-items: center;
 }
 
 
 #save{
-    width: 10%;
     height: 40px;
     border-radius: 12px;
     background-color: black;
@@ -77,4 +75,12 @@ body{
 
 li{
     list-style: none;
+}
+
+
+/* RESPONSIBE */
+@media screen and (min-width: 850px){
+    #champs{
+        grid-template-columns: 10% 90%;
+    } 
 }
